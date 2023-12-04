@@ -1,0 +1,22 @@
+{
+  "1": {
+    "key": "C",
+    "progression": ["C", "Am", "F", "G"]
+  },
+  "2": {
+    "key": "G",
+    "progression": ["G", "D", "Em", "C"]
+  },
+  "3": {
+    "key": "D",
+    "progression": ["D", "Bm", "G", "A"]
+  },
+  "4": {
+    "key": "A",
+    "progression": ["A", "F#m", "D", "E"]
+  },
+  "5": {
+    "key": "E",
+    "progression": ["E", "C#m", "A", "B"]
+  }
+}
