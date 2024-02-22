@@ -1,94 +1,100 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const chordProgressionElement = document.getElementById('chordProgression');
-  const generateButton = document.getElementById('generateButton');
-  const toggleModeButton = document.getElementById('toggleModeButton');
-  const keySelect = document.getElementById('keySelect');
+document.addEventListener('DOMContentLoaded', () => {
+  let keys; 
+
+  // Fetch 
+  fetch('http://localhost:3000/keys')
+    .then(response => response.json())
+    .then(data => {
+      keys = data; // Store the data in the keys variable
+  
+
+      // Populate the Music Key Selector
+      const musicKeySelector = document.getElementById('musicKeySelector');
+      keys.forEach(key => { // Loop through the keys array
+        const option = document.createElement('option'); // Create an <option> element
+        option.value = key.Tonic; 
+        option.textContent = key.Tonic;
+        musicKeySelector.appendChild(option); // Append the <option> element to the <select> element
+      });
+
+      // Event 1: Generate Chord Progression button
+      const generateChordsButton = document.getElementById('generateChordsButton');
+      generateChordsButton.addEventListener('click', generateChordProgressionCallback);
+
+      // Event 2: Toggle Dark Mode button
+      const toggleDarkModeButton = document.getElementById('toggleDarkModeButton');
+      toggleDarkModeButton.addEventListener('click', toggleDarkModeCallback);
+
+      // Event 3: Music Key Selector List
+      musicKeySelector.addEventListener('change', musicKeySelectorCallback);
+    });
 
 
-  let isDarkMode = false;
-
-  const chords = {
-  C: ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bdim'],
-  G: ['G', 'Am', 'Bm', 'C', 'D', 'Em', 'F#dim'],
-  D: ['D', 'Em', 'F#m', 'G', 'A', 'Bm', 'C#dim'],
-  A: ['A', 'Bm', 'C#m', 'D', 'E', 'F#m', 'G#dim'],
-  E: ['E', 'F#m', 'G#m', 'A', 'B', 'C#m', 'D#dim'],
-  B: ['B', 'C#m', 'D#m', 'E', 'F#', 'G#m', 'A#dim'],
-  Fsharp: ['F#', 'G#m', 'A#m', 'B', 'C#', 'D#m', 'E#dim'],
-  Csharp: ['C#', 'D#m', 'E#m', 'F#', 'G#', 'A#m', 'B#dim'],
-  F: ['F', 'Gm', 'Am', 'Bb', 'C', 'Dm', 'Edim'],
-  Bb: ['Bb', 'Cm', 'Dm', 'Eb', 'F', 'Gm', 'Adim'],
-  Eb: ['Eb', 'Fm', 'Gm', 'Ab', 'Bb', 'Cm', 'Ddim'],
-  Ab: ['Ab', 'Bbm', 'Cm', 'Db', 'Eb', 'Fm', 'Gdim'],
-  Db: ['Db', 'Ebm', 'Fm', 'Gb', 'Ab', 'Bbm', 'Cdim'],
-  Gb: ['Gb', 'Abm', 'Bbm', 'Cb', 'Db', 'Ebm', 'Fdim'],
-  Cb: ['Cb', 'Dbm', 'Ebm', 'Fb', 'Gb', 'Abm', 'Bbdim'],
-  Am: ['Am', 'Bdim', 'C', 'Dm', 'Em', 'F', 'G'],
-  Em: ['Em', 'F#dim', 'G', 'Am', 'Bm', 'C', 'D'],
-  Cm: ['Cm', 'Ddim', 'Eb', 'Fm', 'Gm', 'Ab', 'Bb'],
-  Gm: ['Gm', 'Adim', 'Bb', 'Cm', 'Dm', 'Eb', 'F'],
-  Dm: ['Dm', 'Edim', 'F', 'Gm', 'Am', 'Bb', 'C'],
-  Bm: ['Bm', 'C#dim', 'D', 'Em', 'F#m', 'G', 'A'],
-  FsharpM: ['F#m', 'G#dim', 'A', 'Bm', 'C#m', 'D', 'E'],
-  CsharpM: ['C#m', 'D#dim', 'E', 'F#m', 'G#m', 'A', 'B'],
-  Fm: ['Fm', 'Gdim', 'Ab', 'Bbm', 'Cm', 'Db', 'Eb'],
-  Bbm: ['Bbm', 'Cdim', 'Db', 'Ebm', 'Fm', 'Gb', 'Ab'],
-  Ebm: ['Ebm', 'Fdim', 'Gb', 'Abm', 'Bbm', 'Cb', 'Db'],
-  Abm: ['Abm', 'Bbdim', 'Cb', 'Dbm', 'Ebm', 'Fb', 'Gb'],
-  Dbm: ['Dbm', 'Ebdim', 'Fb', 'Gbm', 'Abm', 'Bbb', 'Cb'],
-  Gbm: ['Gbm', 'Abdim', 'Bbb', 'Cbm', 'Dbm', 'Ebb', 'Fb'],
-  Cbm: ['Cbm', 'Dbdim', 'Ebb', 'Fbm', 'Gbm', 'Abb', 'Bbb'],
-  };
-
-  function generateChordProgression() {
-    const selectedKey = keySelect.value;
-
-    if (selectedKey === 'random') {
-      const randomKey = getRandomKey();
-      const firstChord = getRandomChord(randomKey);
-      const progression = [firstChord];
-
-      for (let i = 1; i < 4; i++) {
-        progression.push(getRandomChord(randomKey));
-      }
-
-      const randomChordProgression = progression.join(' - ');
-      chordProgressionElement.textContent = randomChordProgression;
+  // Unique Callback for Generate Chord Progression button
+  function generateChordProgressionCallback() {
+    console.log('Generate Chord Progression button clicked!');
+    
+    const selectedKey = document.getElementById('musicKeySelector').value;
+    
+    const keyData = keys.find(key => key.Tonic === selectedKey);
+  
+    if (keyData) {
+      const randomChordProgression = generateChordProgression(keyData);
+      console.log('Random Chord Progression:', randomChordProgression);
+  
+      const chordProgressionDiv = document.getElementById('chordProgression');
+      chordProgressionDiv.textContent = randomChordProgression.join(' - ');
     } else {
-      const firstChord = getRandomChord(selectedKey);
-      const progression = [firstChord];
-
-      for (let i = 1; i < 4; i++) {
-        progression.push(getRandomChord(selectedKey));
-      }
-
-      const chordProgression = progression.join(' - ');
-      chordProgressionElement.textContent = chordProgression;
+      console.error('Key data not found for selected key:', selectedKey);
     }
   }
-
-  function getRandomKey() {
-    const keys = Object.keys(chords);
-    const randomIndex = Math.floor(Math.random() * keys.length);
-    return keys[randomIndex];
-  }
-
-  function getRandomChord(key) {
-    const chordArray = chords[key];
-    const randomIndex = Math.floor(Math.random() * chordArray.length);
-    return chordArray[randomIndex];
-  }
-  function toggleMode() {
-    isDarkMode = !isDarkMode;
-    document.body.classList.toggle('dark-mode', isDarkMode);
-    document.body.classList.toggle('light-mode', !isDarkMode);
-  }
-
-  generateButton.addEventListener('click', generateChordProgression);
-  toggleModeButton.addEventListener('click', toggleMode);
-  keySelect.addEventListener('change', generateChordProgression);
+  
 });
 
+  // Unique Callback for Toggle Dark Mode button
+  function toggleDarkModeCallback() {
+    const body = document.body;
+  const isDarkMode = body.classList.toggle('dark-mode');
+    console.log('Dark Mode Toggled!');
+  }
 
+  // Unique Callback for Music Key Selector List
+  function musicKeySelectorCallback() {
+    const selectedKey = document.getElementById('musicKeySelector').value;
+    console.log(`Selected Music Key: ${selectedKey}`);
+  }
+
+// Function to generate a random chord progression
+function generateChordProgression(keyData) {
+  const chords = keyData.Key;
+  const randomChords = [];
+
+  // Log the chords array to the console
+  console.log('Chords Array:', chords);
+
+  // Generate 4 random indices
+  const randomIndices = getRandomIndices(chords.length, 4);
+  console.log('Random Indices:', randomIndices);
+
+  // Use the random indices to pick 4 random chords from the key
+  randomIndices.forEach(index => {
+    randomChords.push(chords[index]); // Push the chord at the current index to the randomChords array
+  });
+
+  console.log('Random Chords:', randomChords);
+
+  return randomChords;
+}
+// Function to get an array of random indices
+function getRandomIndices(max, count) {
+  const indices = [];
+  while (indices.length < count) { // Loop until we have the required number of indices
+    const randomIndex = Math.floor(Math.random() * max);
+    if (!indices.includes(randomIndex)) { // Only add the index if it's not already in the array 
+      indices.push(randomIndex);
+    }
+  }
+  return indices;
+}
 
 

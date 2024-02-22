@@ -1,12 +1,25 @@
 README
 
-This is a chord progression generator desgnined for musicians who are looking for inspiration for their next song or just want to mess around with different progressions. This application is perfect for when you're jamming with a couple of friends over a progression, to aiding in your songwriting efforts!
+Chord Generator Website
 
-Personally, as a guitarist I know that music theory is very important in creating music. With this application generating the chords in the respective key it won't just help you create consice music it will give you more of an understanding of how the theory behing it works. 
+Welcome to the Chord Generator Website! This web application is designed to help musicians, songwriters, and music enthusiasts easily generate and visualize music chords.
 
-Make sure the code generator works I needed to create an Array of all the Major and Minor keys in the musical alphabet. Then create a function that would generate a random tonic chord (the I-Chord). Then make sure that the rest of the chords generated would be in the key of the tonic. I.E if the chosen tonic was C major then the generated chords would have to be 4 of the following: C,Dm,Em,F,G,Am,Bdim. (The Key of C major).  
+Features
 
-Pictures Used: 
-Music Notes- Stock Photo
-Soul King Brook - One Piece by Eiichiro Oda 
-Kelpy G- Spongebob Squarepants 
+Chord Generation: Quickly generate chords for a variety of chord types including major and minor.
+Chord Progressions: Build and visualize chord progressions to enhance your songwriting process.
+Night Mode- Gives website a new dark apperance
+Key Selector- Allows you to select a desired key 
+
+How to Use
+
+Select a Music Key: Choose the desired key from the dropdown menu (e.g., A, B, Cm, etc).
+Generate Chord Progression: Allows you to generate a progression from a random key or if you slect a key beforehand using the dropdown it will allow you to generate the progression in the desired key. 
+Dark Mode Toggle- Allows the website to go into dark mode and change the apperance of the website from light to dark
+
+Frontend: HTML, CSS, JavaScript
+Installation
+
+Clone this repository: git clone git@github.com:SAFLO10/phase-1-final-project-.git
+Open index.html in your web browser.
+
