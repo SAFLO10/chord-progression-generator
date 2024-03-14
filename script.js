@@ -1,19 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { //Event listener for when DOM is loaded 
+ 
   let keys; 
-
   // Fetch 
   fetch('http://localhost:3000/keys')
     .then(response => response.json())
     .then(data => {
       keys = data; // Store the data in the keys variable
-  
+    
+
 
       // Populate the Music Key Selector
       const musicKeySelector = document.getElementById('musicKeySelector');
       keys.forEach(key => { // Loop through the keys array
         const option = document.createElement('option'); // Create an <option> element
-        option.value = key.Tonic; 
-        option.textContent = key.Tonic;
+        option.value = key.Tonic; //Gets the values  
+        option.textContent = key.Tonic; //Allows selection of key from dropdown
         musicKeySelector.appendChild(option); // Append the <option> element to the <select> element
       });
 
@@ -27,14 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Event 3: Music Key Selector List
       musicKeySelector.addEventListener('change', musicKeySelectorCallback);
+
     });
+
 
 
   // Unique Callback for Generate Chord Progression button
   function generateChordProgressionCallback() {
     console.log('Generate Chord Progression button clicked!');
     
-    const selectedKey = document.getElementById('musicKeySelector').value;
+    const selectedKey = document.getElementById('musicKeySelector').value; 
     
     const keyData = keys.find(key => key.Tonic === selectedKey);
   

@@ -1,0 +1,134 @@
+{
+  "keys": [
+    {
+      "Tonic": "C",
+      "Key": ["C", "Dm", "Em", "F", "G", "Am", "Bdim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "G",
+      "Key": ["G", "Am","Bm", "C", "D", "Em", "F#dim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "D",
+      "Key": ["D", "Em", "F#m", "G", "A", "Bm", "C#dim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "A",
+      "Key": ["A", "Bm", "C#m", "D", "E", "F#m", "G#dim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "E",
+      "Key": ["E", "F#m", "G#m", "A", "B", "C#m", "D#dim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "B",
+      "Key": ["B", "C#m", "D#m", "E", "F#", "G#m", "A#dim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "F#",
+      "Key": ["F#", "G#m", "A#m", "B", "C#", "D#m", "E#dim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Cb",
+      "Key": ["Cb", "Dbm", "Ebm", "Fb", "Gb", "Abm", "Bbdim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Gb",
+      "Key": ["Gb", "Abm", "Bbm", "Cb", "Db", "Ebm", "Fdim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Db",
+      "Key": ["Db", "Ebm", "Fm", "Gb", "Ab", "Bbm", "Cdim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Ab",
+      "Key": ["Ab", "Bbm", "Cm", "Db", "Eb", "Fm", "Gdim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Eb",
+      "Key": ["Eb", "Fm", "Gm", "Ab", "Bb", "Cm", "Ddim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Bb",
+      "Key": ["Bb", "Cm", "Dm", "Eb", "F", "Gm", "Adim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "F",
+      "Key": ["F", "Gm", "Am", "Bb", "C", "Dm", "Edim"],
+      "Intervals": ["I", "ii", "iii", "IV", "V", "vi", "vii°"]
+    },
+    {
+      "Tonic": "Cm",
+      "Key": ["Cm", "Ddim", "Eb","Fm","G","Ab","Bb"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Gm",
+      "Key": ["Gm", "Adim", "Bb","Cm","D","Eb","F"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Dm",
+      "Key": ["Dm", "Edim", "F","Gm","A","Bb","C"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Am",
+      "Key": ["Am", "Bdim", "C","Dm","E","F","G"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Em",
+      "Key": ["Em", "F#dim", "G","Am","B","C","D"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Bm",
+      "Key": ["Bm", "C#dim", "D","Em","F#","G","A"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "F#m",
+      "Key": ["F#m", "G#dim", "A","Bm","C#","D","E"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "C#m",
+      "Key": ["C#m", "D#dim", "E","F#m","G#","A","B"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "G#m",
+      "Key": ["G#m", "A#dim", "B","C#m","D#","E","F#"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Ebm",
+      "Key": ["Ebm", "Fdim", "Gb","Abm","Bb","Cb","Db"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Bbm",
+      "Key": ["Bbm", "Cdim", "Db","Ebm","F","Gb","Ab"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    },
+    {
+      "Tonic": "Fm",
+      "Key": ["Fm", "Gdim", "Ab","Bbm","C","Db","Eb"],
+      "Intervals": ["i", "ii°", "III", "iv", "V", "VI", "VII"]
+    }
+  ]
+}
